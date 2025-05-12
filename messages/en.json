@@ -46,5 +46,15 @@
         "your_phone": "Your Phone Number",
         "message": "Message",
         "send": "Send"
+    },
+    "reviews": {
+        "title": "What Our Clients Say",
+        "subtitle": "Real feedback from clients after using our services",
+        "client1_name": "أحمد الزهراني",
+        "client1_review": "خدمة ممتازة وسريعة، أنصح الجميع بالتعامل معهم.",
+        "client2_name": "سارة المالكي",
+        "client2_review": "تصميم احترافي ودقة في المواعيد، تجربة رائعة!",
+        "client3_name": "خالد الشمري",
+        "client3_review": "تواصل سريع وفريق عمل مميز، سأكرر التجربة بالتأكيد."
     }
 }
