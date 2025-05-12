@@ -33,5 +33,18 @@
         "completed_projects": "Completed Projects",
         "team_member": "Team Members",
         "experience_years": "Years of Experience"
+    },
+    "contact": {
+        "title": "Contact Information",
+        "email": "Email",
+        "phone": "Phone Number",
+        "address": "Address",
+        "hours": "Working Hours",
+        "formTitle": "Send Us a Message",
+        "name": "Your Name",
+        "your_email": "Your Email",
+        "your_phone": "Your Phone Number",
+        "message": "Message",
+        "send": "Send"
     }
 }

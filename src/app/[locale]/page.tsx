@@ -1,4 +1,5 @@
 // import CustomersCount from "@/components/sections/CustomersCount";
+import Contact from "@/components/sections/Contact";
 import Counts from "@/components/sections/Counts";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
@@ -22,6 +23,10 @@ export default function Home() {
 
             <div className="mt-16">
                 <WhyUs />
+            </div>
+
+            <div className="mt-16">
+                <Contact />
             </div>
         </div>
     );

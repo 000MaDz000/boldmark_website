@@ -33,5 +33,18 @@
         "completed_projects": "مشروع مكتمل",
         "team_member": "عضو بالفريق",
         "experience_years": "سنوات الخبرة"
+    },
+    "contact": {
+        "title": "معلومات التواصل",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "address": "العنوان",
+        "hours": "أوقات العمل",
+        "formTitle": "راسلنا الآن",
+        "name": "الاسم",
+        "your_email": "البريد الإلكتروني",
+        "your_phone": "رقم الهاتف",
+        "message": "الرسالة",
+        "send": "إرسال"
     }
 }

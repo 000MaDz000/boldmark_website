@@ -11,7 +11,7 @@ function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     const links = [
-        { label: t('pricing'), href: '#pricing' },
+        { label: t('pricing'), href: '#contact' },
         { label: t('reviews'), href: '#reviews' },
         { label: t('works'), href: '#works' },
         { label: t('contact'), href: '#contact' },
