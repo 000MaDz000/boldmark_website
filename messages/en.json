@@ -1,0 +1,37 @@
+{
+    "locale_dir": "ltr",
+    "Header": {
+        "works": "Works",
+        "reviews": "Reviews",
+        "contact": "Contact",
+        "pricing": "Pricing"
+    },
+    "Hero": {
+        "title": "Design your startup's professional identity in just 5 days",
+        "subtitle": "We help you create a stunning first visual impression for your customers, with a comprehensive identity design service from A to Z."
+    },
+    "CustomersCount": {
+        "title": "We've earned the trust of many clients"
+    },
+    "WhatYouGet": {
+        "title": "What will we provide you?",
+        "1": "Professional logo design",
+        "2": "Colors and identity guidebook",
+        "3": "PDF + SVG + PNG files",
+        "4": "Social media post template",
+        "5": "Black and white version"
+    },
+    "whyUs": {
+        "title": "Why us?",
+        "subtitle": "We help you create a stunning first visual impression for your customers, with a comprehensive identity design service from A to Z.",
+        "experience": "Experience in designing identities for more than 10 startups",
+        "fastDelivery": "Fast delivery within 3-5 days",
+        "directContact": "Direct communication with the designer"
+    },
+    "Counts": {
+        "happy_clients": "Happy Clients",
+        "completed_projects": "Completed Projects",
+        "team_member": "Team Members",
+        "experience_years": "Years of Experience"
+    }
+}
