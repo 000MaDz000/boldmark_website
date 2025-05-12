@@ -13,7 +13,7 @@ function Header() {
     const links = [
         { label: t('pricing'), href: '#contact' },
         { label: t('reviews'), href: '#reviews' },
-        { label: t('works'), href: '#works' },
+        { label: t('works'), href: '/works' },
         { label: t('contact'), href: '#contact' },
     ];
 

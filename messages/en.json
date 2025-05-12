@@ -4,7 +4,7 @@
         "works": "Works",
         "reviews": "Reviews",
         "contact": "Contact",
-        "pricing": "Pricing"
+        "pricing": "Price Your request"
     },
     "Hero": {
         "title": "Design your startup's professional identity in just 5 days",
@@ -46,6 +46,9 @@
         "your_phone": "Your Phone Number",
         "message": "Message",
         "send": "Send"
+    },
+    "works": {
+        "title": "Our Previous Work"
     },
     "reviews": {
         "title": "What Our Clients Say",
