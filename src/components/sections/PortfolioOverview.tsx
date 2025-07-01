@@ -24,8 +24,8 @@ function PortfolioOverview() {
         <section className='space-y-7 text-center'>
             <h3 className='text-4xl font-semibold'>اعمالنا</h3>
             <div className='grid grid-cols-3 gap-7 container mx-auto' >
-                {projects.map(project => (
-                    <WorkCard title={project.title} image={project.image} description={project.description} />
+                {projects.map((project, i) => (
+                    <WorkCard title={project.title} image={project.image} description={project.description} key={i} />
                 ))}
             </div>
         </section>

@@ -1,6 +1,7 @@
 // import CustomersCount from "@/components/sections/CustomersCount";
 import Contact from "@/components/sections/Contact";
 import Counts from "@/components/sections/Counts";
+import FaqSection from "@/components/sections/FaqSection";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import PortfolioOverview from "@/components/sections/PortfolioOverview";
@@ -32,12 +33,18 @@ export default function Home() {
             </div>
 
             <div className="mt-16">
-                <Contact />
+                <Reviews />
             </div>
 
             <div className="mt-16">
-                <Reviews />
+                <FaqSection />
             </div>
+
+            <div className="mt-16">
+                <Contact />
+            </div>
+
+
         </div>
     );
 }
