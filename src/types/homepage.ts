@@ -5,6 +5,7 @@ import { FrequentlyAskedQuestions } from "./cms_components/sections/frequently_a
 import { HeroSection } from "./cms_components/sections/hero_section";
 import { LinkOnSideCTA } from "./cms_components/sections/link_on_side_cta";
 import { CMS_COMPONENT_ID } from "./cms_components";
+import { PortfolioOverview } from "./cms_components/sections/portfolio_overview";
 
 export interface HomePageData {
     id: number,
@@ -13,5 +14,5 @@ export interface HomePageData {
     updatedAt: string,
     publishedAt: string,
     locale: Locale;
-    content: ((CenteredCta | CredibilityIndecators | FrequentlyAskedQuestions | HeroSection | LinkOnSideCTA) & { __component: CMS_COMPONENT_ID, id: number })[];
+    content: ((CenteredCta | CredibilityIndecators | FrequentlyAskedQuestions | HeroSection | LinkOnSideCTA | PortfolioOverview) & { __component: CMS_COMPONENT_ID, id: number })[];
 }

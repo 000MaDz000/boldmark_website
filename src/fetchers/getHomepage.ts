@@ -24,6 +24,17 @@ export async function getHomePageData(): Promise<HomePageData> {
                         },
                         [CMS_COMPONENT_ID.LINK_ON_SIDE_CTA]: {
                             populate: ["link", "background_image"]
+                        },
+                        [CMS_COMPONENT_ID.PORTFOLIO_OVERVIEW]: {
+                            populate: {
+                                items: {
+                                    populate: {
+                                        project: {
+                                            populate: ["thumbnail"]
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

@@ -2,10 +2,12 @@
 import CenteredCTA from "@/components/sections/CenteredCTA";
 import Contact from "@/components/sections/Contact";
 import Counts from "@/components/sections/Counts";
+import FaqsSection from "@/components/sections/FaqSection";
 import FaqSection from "@/components/sections/FaqSection";
 import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
+import LinkOnSideCTA from "@/components/sections/LinkOnSideCTA";
 import PortfolioOverview from "@/components/sections/PortfolioOverview";
 import Reviews from "@/components/sections/Reviews";
 import WhatYouGet from "@/components/sections/WhatYouGet";
@@ -14,7 +16,11 @@ import { getHomePageData } from "@/fetchers/getHomepage";
 import getFullMediaURL from "@/server_helpers/getFullMediaURL";
 import { CMS_COMPONENT_ID } from "@/types/cms_components";
 import { CenteredCta } from "@/types/cms_components/sections/centered_cta";
+import { CredibilityIndecators } from "@/types/cms_components/sections/credibility_indicators";
+import { FrequentlyAskedQuestions } from "@/types/cms_components/sections/frequently_asked_questions";
 import { HeroSection } from "@/types/cms_components/sections/hero_section";
+import { LinkOnSideCTA as ILinkOnSideCTA } from "@/types/cms_components/sections/link_on_side_cta";
+import { PortfolioOverview as IPortfolioOverview } from "@/types/cms_components/sections/portfolio_overview";
 
 export default async function Home() {
     const data = await getHomePageData();
@@ -32,6 +38,23 @@ export default async function Home() {
                         case CMS_COMPONENT_ID.CENTERED_CTA:
                             const centeredCta = item as CenteredCta;
                             return <CenteredCTA data={centeredCta} key={item.id} />
+
+                        case CMS_COMPONENT_ID.LINK_ON_SIDE_CTA:
+                            const linkOnSideCTA = item as ILinkOnSideCTA;
+                            return <LinkOnSideCTA data={linkOnSideCTA} key={item.id} />
+
+                        case CMS_COMPONENT_ID.CREDIBILITY_INDICATORS:
+                            const credibilityIndicators = item as CredibilityIndecators;
+                            return <Counts data={credibilityIndicators} key={item.id} />
+
+                        case CMS_COMPONENT_ID.FREQUENTLY_ASKED_QUESTIONS_CTA:
+                            const Faqs = item as FrequentlyAskedQuestions;
+                            return <FaqsSection data={Faqs} key={item.id} />
+
+                        case CMS_COMPONENT_ID.PORTFOLIO_OVERVIEW:
+                            const projects = item as IPortfolioOverview;
+                            return <PortfolioOverview data={projects} key={item.id} />
+
                     }
 
                     return null

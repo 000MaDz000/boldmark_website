@@ -1,0 +1,60 @@
+'use client';
+
+import { cn } from '@/utils/cn';
+import ClientLink from '@/components/ui/ClientLink';
+import ClientImage from '@/components/ui/ClientImage';
+import { LinkOnSideCTA as IType } from '@/types/cms_components/sections/link_on_side_cta';
+
+interface LinkOnSideCTAProps {
+    data: IType;
+    className?: string;
+    contentClassName?: string;
+}
+
+export default function LinkOnSideCTA({
+    data,
+    className,
+    contentClassName,
+}: LinkOnSideCTAProps) {
+    const { title, text, link, background_image } = data;
+
+    return (
+        <section className={cn('relative py-14 overflow-hidden', className)}>
+            {/* الخلفية */}
+            <div className="absolute inset-0 z-0">
+                <ClientImage
+                    src={background_image}
+                    alt={background_image?.alternativeText || ''}
+                    className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50" />
+            </div>
+
+            {/* المحتوى */}
+            <div
+                className={cn(
+                    'relative z-10 max-w-screen-xl mx-auto px-4 gap-x-12 justify-between md:flex md:px-8',
+                    contentClassName
+                )}
+            >
+                <div className="max-w-xl">
+                    <h3 className="text-white text-3xl font-semibold sm:text-4xl">
+                        {title}
+                    </h3>
+                    <p className="mt-3 text-gray-300">{text}</p>
+                </div>
+
+                {link && (
+                    <div className="flex-none mt-6 md:mt-0">
+                        <ClientLink
+                            href={link}
+                            className='bg-sky-800/95 hover:bg-sky-700 transition-colors mt-7 p-4 text-white rounded-md min-w-32 text-center block'
+                        >
+                            {link.link_text}
+                        </ClientLink>
+                    </div>
+                )}
+            </div>
+        </section>
+    );
+}

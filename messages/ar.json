@@ -27,12 +27,6 @@
         "fastDelivery": "تسليم سريع خلال 3–5 أيام",
         "directContact": "تواصل مباشر مع المصمم"
     },
-    "Counts": {
-        "happy_clients": "عميل سعيد",
-        "completed_projects": "مشروع مكتمل",
-        "team_member": "عضو بالفريق",
-        "experience_years": "سنوات الخبرة"
-    },
     "contact": {
         "title": "معلومات التواصل",
         "email": "البريد الإلكتروني",
