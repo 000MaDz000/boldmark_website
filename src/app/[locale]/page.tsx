@@ -2,6 +2,7 @@
 import Contact from "@/components/sections/Contact";
 import Counts from "@/components/sections/Counts";
 import FaqSection from "@/components/sections/FaqSection";
+import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import PortfolioOverview from "@/components/sections/PortfolioOverview";
@@ -44,7 +45,7 @@ export default function Home() {
                 <Contact />
             </div>
 
-
+            <Footer />
         </div>
     );
 }
