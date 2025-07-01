@@ -1,4 +1,5 @@
 // import CustomersCount from "@/components/sections/CustomersCount";
+import CenteredCTA from "@/components/sections/CenteredCTA";
 import Contact from "@/components/sections/Contact";
 import Counts from "@/components/sections/Counts";
 import FaqSection from "@/components/sections/FaqSection";
@@ -12,13 +13,14 @@ import WhyUs from "@/components/sections/WhyUs";
 import { getHomePageData } from "@/fetchers/getHomepage";
 import getFullMediaURL from "@/server_helpers/getFullMediaURL";
 import { CMS_COMPONENT_ID } from "@/types/cms_components";
+import { CenteredCta } from "@/types/cms_components/sections/centered_cta";
 import { HeroSection } from "@/types/cms_components/sections/hero_section";
 
 export default async function Home() {
     const data = await getHomePageData();
 
     return (
-        <div className="my-14">
+        <div className="my-14 space-y-16">
             <Header />
             {
                 data.content.map(item => {
@@ -27,6 +29,9 @@ export default async function Home() {
                             const hero = item as HeroSection;
                             hero.background_video.url = getFullMediaURL(hero.background_video.url);
                             return <Hero heroSectionData={hero} key={item.id} />
+                        case CMS_COMPONENT_ID.CENTERED_CTA:
+                            const centeredCta = item as CenteredCta;
+                            return <CenteredCTA data={centeredCta} key={item.id} />
                     }
 
                     return null
