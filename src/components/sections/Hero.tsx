@@ -3,7 +3,9 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { HeroSection } from '@/types/cms_components/sections/hero_section';
+import ClientVideoSrc from '../ui/ClientVideo';
+import ClientLink from '../ui/ClientLink';
 
 const fadeDown = {
     hidden: { opacity: 0, y: -30 },
@@ -15,7 +17,7 @@ const fadeInScale = {
     show: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0.2 } },
 };
 
-function Hero() {
+function Hero({ heroSectionData }: { heroSectionData: HeroSection }) {
     const t = useTranslations('Hero');
 
     return (
@@ -28,7 +30,7 @@ function Hero() {
                 loop
                 playsInline
             >
-                <source src="/designer.mp4" type="video/mp4" />
+                <ClientVideoSrc src={heroSectionData.background_video} />
                 {t("Your browser does not support the video tag")}
             </video>
 
@@ -40,13 +42,18 @@ function Hero() {
                     variants={fadeDown}
                     className="text-center text-white w-full"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold">{t('title')}</h2>
-                    <h3 className="text-lg md:text-2xl mt-4">{t('subtitle')}</h3>
+                    <h2 className="text-3xl md:text-5xl font-bold">{heroSectionData.title}</h2>
+                    <h3 className="text-lg md:text-2xl mt-4">{heroSectionData.subtitle}</h3>
                 </motion.div>
 
                 <div className='flex gap-3'>
-                    <Link href="/pricing" className='bg-sky-800/95 hover:bg-sky-700 transition-colors mt-7 p-4 text-white rounded-md'>{t("pricing")}</Link>
-                    <Link href="/works" className='border-2 border-sky-800 hover:bg-sky-700 transition-colors mt-7 p-4 text-white rounded-md'>{t("see portfolio")}</Link>
+                    {heroSectionData.filled_link ? (
+                        <ClientLink href={heroSectionData.filled_link} className='bg-sky-800/95 hover:bg-sky-700 transition-colors mt-7 p-4 text-white rounded-md'>{heroSectionData.filled_link.link_text}</ClientLink>
+                    ) : null}
+
+                    {heroSectionData.regular_link ? (
+                        <ClientLink href={heroSectionData.regular_link} className='border-2 border-sky-800 hover:bg-sky-700 transition-colors mt-7 p-4 text-white rounded-md'>{heroSectionData.regular_link.link_text}</ClientLink>
+                    ) : null}
                 </div>
             </div>
 

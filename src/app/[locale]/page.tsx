@@ -9,16 +9,33 @@ import PortfolioOverview from "@/components/sections/PortfolioOverview";
 import Reviews from "@/components/sections/Reviews";
 import WhatYouGet from "@/components/sections/WhatYouGet";
 import WhyUs from "@/components/sections/WhyUs";
+import { getHomePageData } from "@/fetchers/getHomepage";
+import getFullMediaURL from "@/server_helpers/getFullMediaURL";
+import { CMS_COMPONENT_ID } from "@/types/cms_components";
+import { HeroSection } from "@/types/cms_components/sections/hero_section";
 
-export default function Home() {
+export default async function Home() {
+    const data = await getHomePageData();
+
     return (
         <div className="my-14">
             <Header />
-            <div className='bg-gradient-to-tr from-slate-200 to-slate-400'>
+            {
+                data.content.map(item => {
+                    switch (item.__component) {
+                        case CMS_COMPONENT_ID.HERO_SECTION:
+                            const hero = item as HeroSection;
+                            hero.background_video.url = getFullMediaURL(hero.background_video.url);
+                            return <Hero heroSectionData={hero} key={item.id} />
+                    }
+
+                    return null
+                })
+            }
+            {/* <div className='bg-gradient-to-tr from-slate-200 to-slate-400'>
                 <Hero />
             </div>
 
-            {/* <CustomersCount /> */}
             <div className="mt-16">
                 <WhatYouGet />
             </div>
@@ -43,7 +60,7 @@ export default function Home() {
 
             <div className="mt-16">
                 <Contact />
-            </div>
+            </div> */}
 
             <Footer />
         </div>
