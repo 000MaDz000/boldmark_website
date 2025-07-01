@@ -4,19 +4,54 @@ import WorkCard from '../ui/WorkCard'
 import Link from 'next/link'
 import { Links } from '@/types/links'
 import { getTranslations } from 'next-intl/server'
+import Slider from '../ui/Slider'
+import { Settings } from 'react-slick'
 
 async function PortfolioOverview({ data }: { data: IPortfolioOverview }) {
     const t = await getTranslations();
+    const sliderSettings: Settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        arrows: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768, // Mobile
+                settings: {
+                    slidesToShow: 1.3,
+                },
+            },
+            {
+                breakpoint: 1024, // Tablet
+                settings: {
+                    slidesToShow: 2.2,
+                },
+            },
+            {
+                breakpoint: 1280, // Desktop
+                settings: {
+                    slidesToShow: 3.3,
+                },
+            },
+        ],
+    };
+
     return (
         <section className='space-y-7 text-center'>
             <h3 className="relative inline-block text-4xl font-bold text-gray-900 after:content-[''] after:block after:w-16 after:h-1 after:bg-red-500 after:mt-2 after:mx-auto">
                 {data.title}
             </h3>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 container mx-auto'>
-                {data.items.map(({ project, id }) => (
-                    <WorkCard data={project} key={id} />
-                ))}
+            <div className="max-w-screen-xl mx-auto">
+                <Slider settings={sliderSettings}>
+                    {data.items.map(({ project, id }) => (
+                        <div key={id} className="px-2">
+                            <WorkCard data={project} />
+                        </div>
+                    ))}
+                </Slider>
             </div>
 
 
