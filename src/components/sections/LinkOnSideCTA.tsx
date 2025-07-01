@@ -4,6 +4,7 @@ import { cn } from '@/utils/cn';
 import ClientLink from '@/components/ui/ClientLink';
 import ClientImage from '@/components/ui/ClientImage';
 import { LinkOnSideCTA as IType } from '@/types/cms_components/sections/link_on_side_cta';
+import Markdown from 'react-markdown';
 
 interface LinkOnSideCTAProps {
     data: IType;
@@ -20,7 +21,7 @@ export default function LinkOnSideCTA({
 
     return (
         <section className={cn('relative py-14 overflow-hidden', className)}>
-            {/* الخلفية */}
+            {/* background */}
             <div className="absolute inset-0 z-0">
                 <ClientImage
                     src={background_image}
@@ -30,7 +31,7 @@ export default function LinkOnSideCTA({
                 <div className="absolute inset-0 bg-black/50" />
             </div>
 
-            {/* المحتوى */}
+            {/* content */}
             <div
                 className={cn(
                     'relative z-10 max-w-screen-xl mx-auto px-4 gap-x-12 justify-between md:flex md:px-8',
@@ -38,10 +39,10 @@ export default function LinkOnSideCTA({
                 )}
             >
                 <div className="max-w-xl">
-                    <h3 className="text-white text-3xl font-semibold sm:text-4xl">
+                    <h3 className="text-white text-3xl font-semibold sm:text-4xl mb-3">
                         {title}
                     </h3>
-                    <p className="mt-3 text-gray-300">{text}</p>
+                    <Markdown>{text}</Markdown>
                 </div>
 
                 {link && (

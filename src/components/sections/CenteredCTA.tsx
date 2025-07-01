@@ -3,6 +3,7 @@ import { CenteredCta } from '@/types/cms_components/sections/centered_cta';
 import { cn } from '@/utils/cn';
 import ClientLink from '@/components/ui/ClientLink';
 import ClientImage from '../ui/ClientImage';
+import Markdown from 'react-markdown';
 
 interface CenteredCTAProps {
     data: CenteredCta;
@@ -30,7 +31,7 @@ export default function CenteredCTA({
                 className
             )}
         >
-            {/* الخلفية */}
+            {/* background */}
             <div className="absolute inset-0 z-0">
                 <ClientImage
                     src={background_image}
@@ -40,10 +41,14 @@ export default function CenteredCTA({
                 <div className="absolute inset-0 bg-black/50" />
             </div>
 
-            {/* المحتوى */}
+            {/* content */}
             <div className={cn('relative z-10 max-w-screen-xl mx-auto text-center', contentClassName)}>
                 <h2 className="text-4xl font-bold leading-tight sm:text-5xl">{title}</h2>
-                <p className="mt-4 text-lg text-gray-100 max-w-2xl mx-auto">{text}</p>
+                <div className="mt-4 max-w-2xl mx-auto">
+                    <Markdown >
+                        {text}
+                    </Markdown>
+                </div>
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
                     {filled_link && (
