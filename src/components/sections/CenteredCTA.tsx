@@ -44,7 +44,7 @@ export default function CenteredCTA({
             {/* content */}
             <div className={cn('relative z-10 max-w-screen-xl mx-auto text-center', contentClassName)}>
                 <h2 className="text-4xl font-bold leading-tight sm:text-5xl">{title}</h2>
-                <div className="mt-4 max-w-2xl mx-auto">
+                <div className="mt-4 max-w-2xl mx-auto prose">
                     <Markdown >
                         {text}
                     </Markdown>

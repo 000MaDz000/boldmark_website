@@ -42,7 +42,9 @@ export default function LinkOnSideCTA({
                     <h3 className="text-white text-3xl font-semibold sm:text-4xl mb-3">
                         {title}
                     </h3>
-                    <Markdown>{text}</Markdown>
+                    <div className='prose'>
+                        <Markdown>{text}</Markdown>
+                    </div>
                 </div>
 
                 {link && (
