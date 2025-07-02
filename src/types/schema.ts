@@ -20,7 +20,7 @@ export interface ResponseMeta {
 
 export interface ResponseSchema<T> {
     data: T[],
-    meta: ResponseMeta;
+    meta: { pagination: ResponseMeta };
 }
 
 

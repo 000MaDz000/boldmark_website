@@ -20,7 +20,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ data: project }) => {
             <ClientImage
                 src={project.thumbnail}
                 alt={project.title}
-                className="w-full object-cover"
+                className="w-full object-cover max-h-[60%] min-h-[60%]"
             />
             <div className="p-4 flex flex-col gap-2">
                 <h4 className="text-xl font-bold text-purple-700">{project.title}</h4>

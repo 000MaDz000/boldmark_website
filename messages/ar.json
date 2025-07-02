@@ -1,6 +1,10 @@
 {
     "locale_dir": "rtl",
     "View All": "عرض الكل",
+    "Pagination": {
+        "prev": "السابق",
+        "next": "التالي"
+    },
     "Header": {
         "works": "الاعمال",
         "reviews": "الاراء",
