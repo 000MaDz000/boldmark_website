@@ -5,16 +5,18 @@ import Logo from '../ui/Logo';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { Links } from '@/types/links';
 
 function Header() {
     const t = useTranslations('Header');
     const [isOpen, setIsOpen] = useState(false);
 
     const links = [
-        { label: t('pricing'), href: '#contact' },
-        { label: t('reviews'), href: '#reviews' },
-        { label: t('works'), href: '/works' },
-        { label: t('contact'), href: '#contact' },
+        { label: t('pricing'), href: Links.PRICING },
+        { label: t('reviews'), href: Links.REVIEWS },
+        { label: t('works'), href: Links.PROJECTS },
+        { label: t('contact'), href: Links.CONTACT },
+        { label: t('blog'), href: Links.BLOG },
     ];
 
     const fadeDown = {

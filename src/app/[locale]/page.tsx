@@ -3,8 +3,6 @@ import CenteredCTA from "@/components/sections/CenteredCTA";
 import Contact from "@/components/sections/Contact";
 import Counts from "@/components/sections/Counts";
 import FaqsSection from "@/components/sections/FaqsSection";
-import Footer from "@/components/sections/Footer";
-import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import LinkOnSideCTA from "@/components/sections/LinkOnSideCTA";
 import PortfolioOverview from "@/components/sections/PortfolioOverview";
@@ -26,8 +24,7 @@ export default async function Home() {
     const data = await getHomePageData();
 
     return (
-        <div className="my-14 space-y-16">
-            <Header />
+        <div className="my-14 space-y-16 grow">
             {
                 data.content.map(item => {
                     switch (item.__component) {
@@ -92,8 +89,6 @@ export default async function Home() {
             <div className="mt-16">
                 <Contact />
             </div> */}
-
-            <Footer />
         </div>
     );
 }

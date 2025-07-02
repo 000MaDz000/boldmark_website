@@ -9,7 +9,8 @@
         "works": "الاعمال",
         "reviews": "الاراء",
         "contact": "التواصل",
-        "pricing": "اطلب عرض سعر"
+        "pricing": "اطلب عرض سعر",
+        "blog": "المدونة"
     },
     "Hero": {
         "Your browser does not support the video tag": "المتصفح لا يدعم الفيديو"
