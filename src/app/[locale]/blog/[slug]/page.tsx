@@ -4,12 +4,14 @@ import { notFound } from 'next/navigation';
 import ClientImage from '@/components/ui/ClientImage';
 import { format } from 'date-fns';
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 
 interface PostPageProps {
     params: Promise<{ slug: string }>;
 }
 
 export default async function PostPage({ params: paramsPromise }: PostPageProps) {
+    const t = await getTranslations();
     const params = await paramsPromise;
     const post = await getPostBySlug(params.slug);
 
@@ -20,7 +22,7 @@ export default async function PostPage({ params: paramsPromise }: PostPageProps)
             <h1 className="text-3xl font-bold text-gray-800 mb-4">{post.title}</h1>
 
             <p className="text-sm text-gray-500 mb-6">
-                نُشر في {format(new Date(post.publishedAt), 'MMMM d, yyyy')}
+                {t("published at", { date: format(new Date(post.publishedAt), 'yyyy, MM, dd') })}
             </p>
 
             <ClientImage

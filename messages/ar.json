@@ -1,6 +1,7 @@
 {
     "locale_dir": "rtl",
     "View All": "عرض الكل",
+    "published at": "نُشر في {date}",
     "Pagination": {
         "prev": "السابق",
         "next": "التالي"
