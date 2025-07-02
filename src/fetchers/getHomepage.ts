@@ -35,6 +35,17 @@ export async function getHomePageData(): Promise<HomePageData> {
                                     }
                                 }
                             }
+                        },
+                        [CMS_COMPONENT_ID.CUSTOMER_REVIEWS]: {
+                            populate: {
+                                reviews: {
+                                    populate: {
+                                        customer_review: {
+                                            populate: ["customer_picture"]
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

@@ -4,5 +4,6 @@ export enum CMS_COMPONENT_ID {
     FREQUENTLY_ASKED_QUESTIONS_CTA = "sections.frequently-asked-questions",
     LINK_ON_SIDE_CTA = "sections.link-on-side-cta",
     CREDIBILITY_INDICATORS = "sections.credibility-indicators",
-    PORTFOLIO_OVERVIEW = "sections.portfolio-overview-section"
+    PORTFOLIO_OVERVIEW = "sections.portfolio-overview-section",
+    CUSTOMER_REVIEWS = "sections.customer-reviews",
 }

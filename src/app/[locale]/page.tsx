@@ -16,6 +16,7 @@ import getFullMediaURL from "@/server_helpers/getFullMediaURL";
 import { CMS_COMPONENT_ID } from "@/types/cms_components";
 import { CenteredCta } from "@/types/cms_components/sections/centered_cta";
 import { CredibilityIndecators } from "@/types/cms_components/sections/credibility_indicators";
+import { CustomerReviews } from "@/types/cms_components/sections/customer_reviews";
 import { FrequentlyAskedQuestions } from "@/types/cms_components/sections/frequently_asked_questions";
 import { HeroSection } from "@/types/cms_components/sections/hero_section";
 import { LinkOnSideCTA as ILinkOnSideCTA } from "@/types/cms_components/sections/link_on_side_cta";
@@ -53,6 +54,9 @@ export default async function Home() {
                         case CMS_COMPONENT_ID.PORTFOLIO_OVERVIEW:
                             const projects = item as IPortfolioOverview;
                             return <PortfolioOverview data={projects} key={item.id} />
+                        case CMS_COMPONENT_ID.CUSTOMER_REVIEWS:
+                            const customerReviews = item as CustomerReviews;
+                            return <Reviews data={customerReviews} key={item.id} />
 
                     }
 
