@@ -21,6 +21,8 @@ import { HeroSection } from "@/types/cms_components/sections/hero_section";
 import { LinkOnSideCTA as ILinkOnSideCTA } from "@/types/cms_components/sections/link_on_side_cta";
 import { PortfolioOverview as IPortfolioOverview } from "@/types/cms_components/sections/portfolio_overview";
 import { FeaturesSection as IFeaturesSection } from '@/types/cms_components/sections/Features';
+import { BlogHightlightSection as IBlogHightlightSection } from "@/types/cms_components/sections/blog_hightlight_section";
+import BlogHightlightsSection from "@/components/sections/BlogHightlights";
 
 export default async function Home() {
     const data = await getHomePageData();
@@ -59,6 +61,9 @@ export default async function Home() {
                         case CMS_COMPONENT_ID.FEATURES_SECTION:
                             const features = item as IFeaturesSection;
                             return <FeaturesSection key={features.id} section={features} />
+                        case CMS_COMPONENT_ID.BLOG_HIGHTLIGHTS:
+                            const hightlights = item as IBlogHightlightSection;
+                            return <BlogHightlightsSection data={hightlights} />
 
                     }
 

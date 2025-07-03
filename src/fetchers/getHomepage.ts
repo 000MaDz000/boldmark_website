@@ -57,6 +57,17 @@ export async function getHomePageData(): Promise<HomePageData> {
                                     }
                                 }
                             }
+                        },
+                        [CMS_COMPONENT_ID.BLOG_HIGHTLIGHTS]: {
+                            populate: {
+                                highlights: {
+                                    populate: {
+                                        post: {
+                                            populate: ["thumbnail", "publisher_picture"]
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
