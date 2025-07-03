@@ -2,6 +2,12 @@
     "locale_dir": "rtl",
     "View All": "عرض الكل",
     "published at": "نُشر في {date}",
+    "Most Popular": "الاكثر شهرة",
+    "Timeline:": "المدة الزمنية:",
+    "Revisions:": "عدد التعديلات:",
+    "not configured": "غير معرف",
+    "Deliverables": "المخرجات",
+    "Features Included": "المميزات",
     "Pagination": {
         "prev": "السابق",
         "next": "التالي"

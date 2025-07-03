@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Links } from '@/types/links';
+import Link from 'next/link';
 
 function Header() {
     const t = useTranslations('Header');
@@ -43,9 +44,9 @@ function Header() {
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-8 text-gray-800 font-medium">
                     {links.map((link) => (
-                        <a key={link.label} href={link.href} className="hover:text-purple-600 transition">
+                        <Link key={link.label} href={link.href} className="hover:text-purple-600 transition">
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
                 </nav>
 
@@ -68,14 +69,14 @@ function Header() {
                         variants={mobileMenuAnim}
                     >
                         {links.map((link) => (
-                            <a
+                            <Link
                                 key={link.label}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
                                 className="text-gray-700 hover:text-purple-600 transition"
                             >
                                 {link.label}
-                            </a>
+                            </Link>
                         ))}
                     </motion.nav>
                 )}
