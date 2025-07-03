@@ -3,6 +3,8 @@ import { LuCheck, LuX, LuArrowRight } from 'react-icons/lu';
 import { getPricingPageData } from '@/fetchers/getPricingPage';
 import CenteredCTA from '@/components/sections/CenteredCTA';
 import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
+import { Links } from '@/types/links';
 
 export default async function PricingPage() {
     const pageData = await getPricingPageData();
@@ -119,7 +121,8 @@ export default async function PricingPage() {
 
                             {/* Card Footer */}
                             <div className="p-6 pt-6">
-                                <button
+                                <Link
+                                    href={Links.CONTACT}
                                     className={`cursor-pointer w-full py-4 px-6 text-lg font-semibold rounded-xl transition-all duration-300 flex items-center justify-center ${tier.popular
                                         ? 'bg-slate-900 hover:bg-slate-800 text-white'
                                         : 'bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900'
@@ -127,7 +130,7 @@ export default async function PricingPage() {
                                 >
                                     {tier.cta}
                                     <LuArrowRight className="w-5 h-5 ml-2 rtl:rotate-180 mx-3" />
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
