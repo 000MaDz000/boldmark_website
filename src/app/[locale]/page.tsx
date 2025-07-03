@@ -63,7 +63,7 @@ export default async function Home() {
                             return <FeaturesSection key={features.id} section={features} />
                         case CMS_COMPONENT_ID.BLOG_HIGHTLIGHTS:
                             const hightlights = item as IBlogHightlightSection;
-                            return <BlogHightlightsSection data={hightlights} />
+                            return <BlogHightlightsSection key={item.id} data={hightlights} />
 
                     }
 
