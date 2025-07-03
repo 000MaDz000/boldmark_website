@@ -6,4 +6,5 @@ export enum CMS_COMPONENT_ID {
     CREDIBILITY_INDICATORS = "sections.credibility-indicators",
     PORTFOLIO_OVERVIEW = "sections.portfolio-overview-section",
     CUSTOMER_REVIEWS = "sections.customer-reviews",
+    FEATURES_SECTION = "sections.features-section"
 }

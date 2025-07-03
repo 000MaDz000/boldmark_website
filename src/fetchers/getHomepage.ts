@@ -46,6 +46,17 @@ export async function getHomePageData(): Promise<HomePageData> {
                                     }
                                 }
                             }
+                        },
+                        [CMS_COMPONENT_ID.FEATURES_SECTION]: {
+                            populate: {
+                                features: {
+                                    populate: {
+                                        data: {
+                                            populate: ["image"]
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

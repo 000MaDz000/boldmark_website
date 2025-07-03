@@ -1,7 +1,8 @@
 import { Picture } from "./picture";
 import { Locale } from "./schema";
 
-export interface BlogPageData {
+
+export interface Feature {
     id: number,
     documentId: string;
     createdAt: string,
@@ -9,7 +10,7 @@ export interface BlogPageData {
     publishedAt: string,
     locale: Locale;
 
-    title?: string | null;
-    subtitle?: string | null;
-    blog_logo?: Picture | null;
+    title: string;
+    description: string;
+    image: Picture;
 }

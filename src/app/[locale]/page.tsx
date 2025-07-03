@@ -3,6 +3,7 @@ import CenteredCTA from "@/components/sections/CenteredCTA";
 import Contact from "@/components/sections/Contact";
 import Counts from "@/components/sections/Counts";
 import FaqsSection from "@/components/sections/FaqsSection";
+import FeaturesSection from "@/components/sections/FeatureSection";
 import Hero from "@/components/sections/Hero";
 import LinkOnSideCTA from "@/components/sections/LinkOnSideCTA";
 import PortfolioOverview from "@/components/sections/PortfolioOverview";
@@ -19,6 +20,7 @@ import { FrequentlyAskedQuestions } from "@/types/cms_components/sections/freque
 import { HeroSection } from "@/types/cms_components/sections/hero_section";
 import { LinkOnSideCTA as ILinkOnSideCTA } from "@/types/cms_components/sections/link_on_side_cta";
 import { PortfolioOverview as IPortfolioOverview } from "@/types/cms_components/sections/portfolio_overview";
+import { FeaturesSection as IFeaturesSection } from '@/types/cms_components/sections/Features';
 
 export default async function Home() {
     const data = await getHomePageData();
@@ -54,12 +56,16 @@ export default async function Home() {
                         case CMS_COMPONENT_ID.CUSTOMER_REVIEWS:
                             const customerReviews = item as CustomerReviews;
                             return <Reviews data={customerReviews} key={item.id} />
+                        case CMS_COMPONENT_ID.FEATURES_SECTION:
+                            const features = item as IFeaturesSection;
+                            return <FeaturesSection key={features.id} section={features} />
 
                     }
 
                     return null
                 })
             }
+
             {/* <div className='bg-gradient-to-tr from-slate-200 to-slate-400'>
                 <Hero />
             </div>

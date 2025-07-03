@@ -7,6 +7,7 @@ import { CMS_COMPONENT_ID } from "./cms_components";
 import { PortfolioOverview } from "./cms_components/sections/portfolio_overview";
 import { CustomerReviews } from "./cms_components/sections/customer_reviews";
 import { Locale } from "./schema";
+import { FeaturesSection } from "./cms_components/sections/Features";
 
 export interface HomePageData {
     id: number,
@@ -15,5 +16,5 @@ export interface HomePageData {
     updatedAt: string,
     publishedAt: string,
     locale: Locale;
-    content: ((CenteredCta | CredibilityIndecators | FrequentlyAskedQuestions | HeroSection | LinkOnSideCTA | PortfolioOverview | CustomerReviews) & { __component: CMS_COMPONENT_ID, id: number })[];
+    content: ((CenteredCta | CredibilityIndecators | FrequentlyAskedQuestions | HeroSection | LinkOnSideCTA | PortfolioOverview | CustomerReviews | FeaturesSection) & { __component: CMS_COMPONENT_ID, id: number })[];
 }
