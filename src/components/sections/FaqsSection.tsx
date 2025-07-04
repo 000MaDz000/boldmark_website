@@ -20,22 +20,26 @@ export default function FaqsSection({
 }: FaqsSectionProps) {
     const { title, text, questions, side_image } = data;
 
+    const hasImage = !!side_image;
+
     return (
         <section
             className={cn(
-                'flex flex-col-reverse items-center gap-10 md:flex-row px-4 py-12 max-w-screen-xl mx-auto',
+                'flex flex-col-reverse gap-10 md:flex-row px-4 py-12 max-w-screen-xl mx-auto',
+                hasImage ? 'items-center' : 'items-center justify-center',
                 className
             )}
         >
-
-            <div className={cn('flex-1 max-w-2xl space-y-8', contentClassName)}>
-                <div className="space-y-3 text-center md:text-start">
+            <div
+                className={cn(
+                    'space-y-8',
+                    hasImage ? 'flex-1 max-w-2xl' : 'w-full max-w-3xl text-center',
+                    contentClassName
+                )}
+            >
+                <div className={cn('space-y-3', hasImage ? 'md:text-start text-center' : 'text-center')}>
                     <h2 className="text-3xl text-gray-800 font-semibold">{title}</h2>
-                    {text && (
-                        <ReactMarkdown>
-                            {text}
-                        </ReactMarkdown>
-                    )}
+                    {text && <ReactMarkdown>{text}</ReactMarkdown>}
                 </div>
 
                 <div className="space-y-6">
@@ -45,14 +49,15 @@ export default function FaqsSection({
                 </div>
             </div>
 
-
-            <div className="flex-1 max-w-xl w-full">
-                <ClientImage
-                    src={side_image}
-                    alt={side_image.alternativeText || 'FAQ Illustration'}
-                    className="w-full h-auto object-contain rounded-lg shadow-lg"
-                />
-            </div>
+            {hasImage && (
+                <div className="flex-1 max-w-xl w-full">
+                    <ClientImage
+                        src={side_image}
+                        alt={side_image.alternativeText || 'FAQ Illustration'}
+                        className="w-full h-auto object-contain rounded-lg shadow-lg"
+                    />
+                </div>
+            )}
         </section>
     );
 }

@@ -23,7 +23,7 @@ const FeaturesSection = ({ section }: Props) => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {section.features.map((featureObj) => (
-                        <FeatureCard key={featureObj.id} feature={featureObj.data} />
+                        <FeatureCard key={featureObj.id} feature={featureObj.data} variant={section.variant} />
                     ))}
                 </div>
             </div>

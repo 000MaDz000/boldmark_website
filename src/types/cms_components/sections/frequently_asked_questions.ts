@@ -5,5 +5,5 @@ export interface FrequentlyAskedQuestions {
     title: string;
     text?: string | null;
     questions: AnsweredQuestion[];
-    side_image: Picture;
+    side_image?: Picture | null;
 }
