@@ -28,7 +28,7 @@ export default function CenteredCTA({
     return (
         <section
             className={cn(
-                'relative py-20 px-4 overflow-hidden bg-slate-900 text-white',
+                'relative py-20 px-4 overflow-hidden bg-surface text-on-surface',
                 className
             )}
         >
@@ -40,7 +40,7 @@ export default function CenteredCTA({
                         alt={background_image.alternativeText || ''}
                         className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-black/60" />
+                    <div className="absolute inset-0 bg-overlay" />
                 </div>
             )}
 
@@ -49,10 +49,12 @@ export default function CenteredCTA({
                 'relative z-10 max-w-screen-lg mx-auto text-center',
                 contentClassName
             )}>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-on-surface">
+                    {title}
+                </h2>
 
                 {text && (
-                    <div className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto prose prose-invert">
+                    <div className="text-on-surface-muted text-lg mb-8 max-w-2xl mx-auto prose prose-invert">
                         <Markdown>{text}</Markdown>
                     </div>
                 )}
@@ -61,7 +63,7 @@ export default function CenteredCTA({
                     {filled_link && (
                         <ClientLink
                             href={filled_link}
-                            className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300"
+                            className="bg-inverted text-on-inverted hover:bg-inverted-hover px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300"
                         >
                             {filled_link.link_text}
                         </ClientLink>
@@ -69,7 +71,7 @@ export default function CenteredCTA({
                     {regular_link && (
                         <ClientLink
                             href={regular_link}
-                            className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                            className="border-2 border-inverted text-inverted hover:bg-inverted hover:text-on-inverted px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
                         >
                             {regular_link.link_text}
                         </ClientLink>

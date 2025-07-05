@@ -15,7 +15,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ data: project }) => {
         <motion.div
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col aspect-square cursor-pointer"
+            className="bg-surface-light rounded-xl shadow-lg overflow-hidden flex flex-col aspect-square cursor-pointer"
         >
             <ClientImage
                 src={project.thumbnail}
@@ -23,8 +23,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ data: project }) => {
                 className="w-full object-cover max-h-[60%] min-h-[60%]"
             />
             <div className="p-4 flex flex-col gap-2">
-                <h4 className="text-xl font-bold text-purple-700">{project.title}</h4>
-                <p className="text-gray-600 text-sm line-clamp-3">{project.description}</p>
+                <h4 className="text-xl font-bold text-accent">{project.title}</h4>
+                <p className="text-text-muted text-sm line-clamp-3">{project.description}</p>
             </div>
         </motion.div>
     );

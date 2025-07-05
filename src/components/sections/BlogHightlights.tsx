@@ -18,19 +18,19 @@ async function BlogHightlightsSection({ data }: { data: BlogHightlightSection })
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 768, // Mobile
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1.3,
                 },
             },
             {
-                breakpoint: 1024, // Tablet
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 2.2,
                 },
             },
             {
-                breakpoint: 1280, // Desktop
+                breakpoint: 1280,
                 settings: {
                     slidesToShow: 3.3,
                 },
@@ -39,8 +39,8 @@ async function BlogHightlightsSection({ data }: { data: BlogHightlightSection })
     };
 
     return (
-        <section className='space-y-7 text-center'>
-            <h3 className="relative inline-block text-4xl font-bold text-gray-900 after:content-[''] after:block after:w-16 after:h-1 after:bg-red-500 after:mt-2 after:mx-auto">
+        <section className="space-y-7 text-center">
+            <h3 className="relative inline-block text-4xl font-bold text-heading after:content-[''] after:block after:w-16 after:h-1 after:bg-accent after:mt-2 after:mx-auto">
                 {data.title}
             </h3>
 
@@ -54,17 +54,16 @@ async function BlogHightlightsSection({ data }: { data: BlogHightlightSection })
                 </Slider>
             </div>
 
-
             <div className="mt-6">
                 <Link
                     href={Links.BLOG}
-                    className="inline-block px-6 py-2 rounded-full border border-sky-700 text-black hover:bg-sky-700 hover:text-white transition-colors duration-300"
+                    className="inline-block px-6 py-2 rounded-full border border-primary text-text hover:bg-primary hover:text-on-primary transition-colors duration-300"
                 >
                     {t("View All")}
                 </Link>
             </div>
-
-        </section>)
+        </section>
+    )
 }
 
 export default BlogHightlightsSection;

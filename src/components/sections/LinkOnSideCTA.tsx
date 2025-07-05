@@ -28,7 +28,7 @@ export default function LinkOnSideCTA({
                     alt={background_image?.alternativeText || ''}
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-overlay" />
             </div>
 
             {/* content */}
@@ -39,10 +39,10 @@ export default function LinkOnSideCTA({
                 )}
             >
                 <div className="max-w-xl">
-                    <h3 className="text-white text-3xl font-semibold sm:text-4xl mb-3">
+                    <h3 className="text-on-surface text-3xl font-semibold sm:text-4xl mb-3">
                         {title}
                     </h3>
-                    <div className='prose'>
+                    <div className="prose prose-invert text-on-surface-soft">
                         <Markdown>{text}</Markdown>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ export default function LinkOnSideCTA({
                     <div className="flex-none mt-6 md:mt-0">
                         <ClientLink
                             href={link}
-                            className='bg-sky-800/95 hover:bg-sky-700 transition-colors mt-7 p-4 text-white rounded-md min-w-32 text-center block'
+                            className="bg-primary hover:bg-primary-hover transition-colors mt-7 px-6 py-3 text-on-primary rounded-md min-w-32 text-center block text-sm font-semibold"
                         >
                             {link.link_text}
                         </ClientLink>

@@ -29,7 +29,6 @@ const Pagination: React.FC<PaginationProps> = ({ meta }) => {
         router.push(createPageURL(newPage));
     };
 
-    // -------- Pagination logic with ellipsis --------
     const getPages = () => {
         const pages: (number | 'dots')[] = [];
         const visiblePages = 2;
@@ -41,7 +40,7 @@ const Pagination: React.FC<PaginationProps> = ({ meta }) => {
         if (pageCount <= 7) {
             addRange(1, pageCount);
         } else {
-            addRange(1, 1); // always show first
+            addRange(1, 1);
 
             if (page > visiblePages + 2) pages.push('dots');
 
@@ -51,19 +50,19 @@ const Pagination: React.FC<PaginationProps> = ({ meta }) => {
 
             if (page < pageCount - visiblePages - 1) pages.push('dots');
 
-            addRange(pageCount, pageCount); // always show last
+            addRange(pageCount, pageCount);
         }
 
         return pages;
     };
 
     return (
-        <div className="flex justify-center items-center gap-2 mt-8 flex-wrap" dir={"ltr"}>
+        <div className="flex justify-center items-center gap-2 mt-8 flex-wrap" dir="ltr">
             {/* Prev Button */}
             <button
                 onClick={() => handlePageChange(page - 1)}
                 disabled={page === 1}
-                className="px-3 py-1 rounded-md border text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 flex gap-2 cursor-pointer items-center"
+                className="px-3 py-1 rounded-md border border-border text-sm text-text-muted hover:bg-surface-hover disabled:opacity-50 flex gap-2 cursor-pointer items-center"
             >
                 {t("prev")} <BsArrowLeft />
             </button>
@@ -71,16 +70,16 @@ const Pagination: React.FC<PaginationProps> = ({ meta }) => {
             {/* Page Numbers */}
             {getPages().map((p, idx) =>
                 p === 'dots' ? (
-                    <span key={idx} className="px-2 text-gray-400">
+                    <span key={idx} className="px-2 text-text-disabled">
                         ...
                     </span>
                 ) : (
                     <button
                         key={p}
                         onClick={() => handlePageChange(p)}
-                        className={`px-3 py-1 rounded-md border text-sm cursor-pointer ${p === page
-                            ? 'bg-purple-600 text-white'
-                            : 'text-gray-700 hover:bg-gray-100'
+                        className={`px-3 py-1 rounded-md border border-border text-sm cursor-pointer ${p === page
+                                ? 'bg-primary text-on-primary'
+                                : 'text-text-subtle hover:bg-surface-hover'
                             }`}
                     >
                         {p}
@@ -92,7 +91,7 @@ const Pagination: React.FC<PaginationProps> = ({ meta }) => {
             <button
                 onClick={() => handlePageChange(page + 1)}
                 disabled={page === pageCount}
-                className="px-3 py-1 rounded-md border text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 flex gap-2 cursor-pointer items-center"
+                className="px-3 py-1 rounded-md border border-border text-sm text-text-muted hover:bg-surface-hover disabled:opacity-50 flex gap-2 cursor-pointer items-center"
             >
                 {t("next")} <BsArrowRight />
             </button>

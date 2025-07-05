@@ -19,9 +19,9 @@ export default async function PostPage({ params: paramsPromise }: PostPageProps)
 
     return (
         <article className="container mx-auto px-4 py-20">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">{post.title}</h1>
+            <h1 className="text-3xl font-bold text-heading mb-4">{post.title}</h1>
 
-            <p className="text-sm text-gray-500 mb-6">
+            <p className="text-sm text-text-muted mb-6">
                 {t("published at", { date: format(new Date(post.publishedAt), 'yyyy, MM, dd') })}
             </p>
 

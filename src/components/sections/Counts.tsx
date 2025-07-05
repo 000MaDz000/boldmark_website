@@ -26,24 +26,24 @@ export default function Counts({
                 className
             )}
         >
-            {/* background */}
+            {/* background image */}
             <ClientImage
                 src={background_image}
                 alt={background_image.alternativeText || ''}
                 className="absolute inset-0 object-cover z-0"
             />
-            <div className="absolute inset-0 bg-black/60 z-0" />
+            <div className="absolute inset-0 bg-overlay z-0" />
 
             {/* content */}
             <div
                 className={cn(
-                    'container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 text-center text-gray-200 place-items-center w-full z-10 relative',
+                    'container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 text-center text-on-surface-muted place-items-center w-full z-10 relative',
                     contentClassName
                 )}
             >
                 {indicators.map((item, index) => (
                     <div key={index}>
-                        <h3 className="text-4xl md:text-5xl font-bold">
+                        <h3 className="text-4xl md:text-5xl font-bold text-on-surface">
                             +<CountUp end={parseInt(item.count)} duration={2} />
                         </h3>
                         <p className="mt-2 text-lg md:text-xl">{item.title}</p>

@@ -38,8 +38,12 @@ export default function FaqsSection({
                 )}
             >
                 <div className={cn('space-y-3', hasImage ? 'md:text-start text-center' : 'text-center')}>
-                    <h2 className="text-3xl text-gray-800 font-semibold">{title}</h2>
-                    {text && <ReactMarkdown>{text}</ReactMarkdown>}
+                    <h2 className="text-3xl text-heading font-semibold">{title}</h2>
+                    {text && (
+                        <div className="prose text-text-muted prose-headings:text-heading prose-p:text-text-muted">
+                            <ReactMarkdown>{text}</ReactMarkdown>
+                        </div>
+                    )}
                 </div>
 
                 <div className="space-y-6">

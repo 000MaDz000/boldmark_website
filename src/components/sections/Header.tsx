@@ -4,13 +4,11 @@ import React, { useState } from 'react';
 import Logo from '../ui/Logo';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import Link from 'next/link';
 import { SiteSettings } from '@/types/site_settings';
 import ClientLink from '../ui/ClientLink';
 
 function Header({ siteSettings }: { siteSettings: SiteSettings }) {
     const [isOpen, setIsOpen] = useState(false);
-
 
     const fadeDown = {
         hidden: { opacity: 0, y: -20 },
@@ -25,7 +23,7 @@ function Header({ siteSettings }: { siteSettings: SiteSettings }) {
 
     return (
         <motion.header
-            className="w-full px-6 md:px-16 py-4 shadow-sm bg-white fixed top-0 z-50"
+            className="w-full px-6 md:px-16 py-4 shadow-sm bg-surface-light fixed top-0 z-50"
             initial="hidden"
             animate="show"
             variants={fadeDown}
@@ -34,9 +32,13 @@ function Header({ siteSettings }: { siteSettings: SiteSettings }) {
                 <Logo />
 
                 {/* Desktop Menu */}
-                <nav className="hidden md:flex gap-8 text-gray-800 font-medium">
+                <nav className="hidden md:flex gap-8 text-heading font-medium">
                     {siteSettings.header_links?.map((link) => (
-                        <ClientLink key={link.id} href={link} className="hover:text-purple-600 transition">
+                        <ClientLink
+                            key={link.id}
+                            href={link}
+                            className="hover:text-accent transition"
+                        >
                             {link.link_text}
                         </ClientLink>
                     ))}
@@ -44,7 +46,7 @@ function Header({ siteSettings }: { siteSettings: SiteSettings }) {
 
                 {/* Mobile Menu Toggle */}
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 cursor-pointer">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-text-subtle cursor-pointer">
                         {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                     </button>
                 </div>
@@ -54,7 +56,7 @@ function Header({ siteSettings }: { siteSettings: SiteSettings }) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.nav
-                        className="md:hidden mt-3 flex flex-col gap-4 bg-white shadow px-4 py-3 rounded-md"
+                        className="md:hidden mt-3 flex flex-col gap-4 bg-surface-light shadow px-4 py-3 rounded-md"
                         initial="hidden"
                         animate="show"
                         exit="exit"
@@ -65,7 +67,7 @@ function Header({ siteSettings }: { siteSettings: SiteSettings }) {
                                 key={link.id}
                                 href={link}
                                 onClick={() => setIsOpen(false)}
-                                className="text-gray-700 hover:text-purple-600 transition"
+                                className="text-text-subtle hover:text-accent transition"
                             >
                                 {link.link_text}
                             </ClientLink>

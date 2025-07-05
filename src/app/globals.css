@@ -1,2 +1,78 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme inline {
+    /* === Primary Theme Colors === */
+    --color-primary: #075985;
+    /* sky-800 */
+    --color-primary-hover: #0369a1;
+    /* sky-700 */
+    --color-primary-border: #075985;
+    --color-on-primary: #ffffff;
+
+    /* === Secondary (Accent) Colors === */
+    --color-secondary: #9333ea;
+    /* purple-600 */
+    --color-secondary-hover: #7e22ce;
+    /* purple-700 */
+    --color-secondary-muted: #c084fc;
+    /* purple-400 */
+    --color-on-secondary: #ffffff;
+
+    /* === Accent === */
+    --color-accent: #8b5cf6;
+    /* violet-500 */
+    --color-accent-muted: #9333ea;
+    /* violet-600 */
+
+    /* === Surface / Backgrounds === */
+    --color-surface: #0f172a;
+    /* slate-900 */
+    --color-surface-light: #ffffff;
+    --color-surface-soft: #f9fafb;
+    /* gray-50 */
+    --color-surface-hover: #f3f4f6;
+    /* gray-100 */
+
+    /* === Text on Surfaces === */
+    --color-on-surface: #ffffff;
+    --color-on-surface-muted: #cbd5e1;
+    /* slate-300 */
+    --color-on-surface-soft: #e5e7eb;
+    /* gray-200 */
+
+    /* === Inverted Theme (Dark on Light) === */
+    --color-inverted: #ffffff;
+    --color-on-inverted: #0f172a;
+    --color-inverted-hover: #f1f5f9;
+    --color-inverted-border: #ffffff;
+
+    /* === Text Colors === */
+    --color-heading: #1f2937;
+    /* gray-800 */
+    --color-text: #000000;
+    --color-text-muted: #6b7280;
+    /* gray-500 */
+    --color-text-subtle: #4b5563;
+    /* gray-600 */
+    --color-text-disabled: #9ca3af;
+    /* gray-400 */
+
+    /* === Border & Divider === */
+    --color-border: #e5e7eb;
+    /* gray-200 */
+
+    /* === Overlay === */
+    --color-overlay: rgba(0, 0, 0, 0.6);
+    --color-overlay-light: rgba(0, 0, 0, 0.5);
+
+    /* === Rating / Stars === */
+    --color-rating: #facc15;
+    /* yellow-400 */
+
+    /* === CTA / Button Common === */
+    --color-button-bg: var(--color-primary);
+    --color-button-hover: var(--color-primary-hover);
+    --color-button-text: var(--color-on-primary);
+    --color-button-outline-border: var(--color-primary-border);
+}
