@@ -44,7 +44,7 @@ async function BlogHightlightsSection({ data }: { data: BlogHightlightSection })
                 {data.title}
             </h3>
 
-            <div className="max-w-screen-xl mx-auto">
+            <div className="w-full max-w-[90vw] sm:max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 <Slider settings={sliderSettings}>
                     {data.highlights.map(({ post, id }) => (
                         <div key={id} className="px-2">

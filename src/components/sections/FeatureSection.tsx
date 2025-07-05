@@ -28,7 +28,7 @@ const FeaturesSection = ({ section }: Props) => {
                         ))}
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 container mx-auto">
                         {section.features.map((featureObj) => (
                             <FeatureCard key={featureObj.id} feature={featureObj.data} variant={section.variant} />
                         ))}

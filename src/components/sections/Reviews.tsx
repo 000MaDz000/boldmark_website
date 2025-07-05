@@ -58,44 +58,46 @@ function Reviews({ data }: { data: CustomerReviews }) {
                 <p className="text-gray-500 mt-2">{data.subtitle}</p>
             </motion.div>
 
-            <Slider settings={sliderSettings}>
-                {data.reviews.map(review => {
-                    const rate = review.customer_review.rate ?? 0;
-                    const fullStars = Math.floor(rate);
-                    const emptyStars = 5 - fullStars;
+            <div className="w-full max-w-[90vw] sm:max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <Slider settings={sliderSettings}>
+                    {data.reviews.map(review => {
+                        const rate = review.customer_review.rate ?? 0;
+                        const fullStars = Math.floor(rate);
+                        const emptyStars = 5 - fullStars;
 
-                    return (
-                        <motion.div
-                            key={review.id}
-                            variants={fadeInUp}
-                            className="bg-white shadow-xl rounded-lg p-8 text-center flex flex-col items-center gap-4 mx-4"
-                        >
-                            <ClientImage
-                                src={review.customer_review.customer_picture}
-                                alt={review.customer_review.customer_name}
-                                className="w-20 h-20 rounded-full object-cover mx-auto"
-                            />
-                            <p className="text-gray-700 text-sm leading-relaxed">
-                                {review.customer_review.customer_name}
-                            </p>
+                        return (
+                            <motion.div
+                                key={review.id}
+                                variants={fadeInUp}
+                                className="bg-white shadow-xl rounded-lg p-8 text-center flex flex-col items-center gap-4 mx-4"
+                            >
+                                <ClientImage
+                                    src={review.customer_review.customer_picture}
+                                    alt={review.customer_review.customer_name}
+                                    className="w-20 h-20 rounded-full object-cover mx-auto"
+                                />
+                                <p className="text-gray-700 text-sm leading-relaxed">
+                                    {review.customer_review.customer_name}
+                                </p>
 
-                            {/* Stars */}
-                            <div className="flex gap-1 text-yellow-400 justify-center">
-                                {[...Array(fullStars)].map((_, i) => (
-                                    <FaStar key={`full-${i}`} />
-                                ))}
-                                {[...Array(emptyStars)].map((_, i) => (
-                                    <FaRegStar key={`empty-${i}`} />
-                                ))}
-                            </div>
+                                {/* Stars */}
+                                <div className="flex gap-1 text-yellow-400 justify-center">
+                                    {[...Array(fullStars)].map((_, i) => (
+                                        <FaStar key={`full-${i}`} />
+                                    ))}
+                                    {[...Array(emptyStars)].map((_, i) => (
+                                        <FaRegStar key={`empty-${i}`} />
+                                    ))}
+                                </div>
 
-                            <span className="font-semibold text-purple-600 mt-2">
-                                {review.customer_review.text}
-                            </span>
-                        </motion.div>
-                    );
-                })}
-            </Slider>
+                                <span className="font-semibold text-purple-600 mt-2">
+                                    {review.customer_review.text}
+                                </span>
+                            </motion.div>
+                        );
+                    })}
+                </Slider>
+            </div>
         </motion.div>
     );
 }
