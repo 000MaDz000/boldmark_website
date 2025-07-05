@@ -2,23 +2,15 @@
 
 import React, { useState } from 'react';
 import Logo from '../ui/Logo';
-import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { Links } from '@/types/links';
 import Link from 'next/link';
+import { SiteSettings } from '@/types/site_settings';
+import ClientLink from '../ui/ClientLink';
 
-function Header() {
-    const t = useTranslations('Header');
+function Header({ siteSettings }: { siteSettings: SiteSettings }) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const links = [
-        { label: t('pricing'), href: Links.PRICING },
-        { label: t('reviews'), href: Links.REVIEWS },
-        { label: t('works'), href: Links.PROJECTS },
-        { label: t('contact'), href: Links.CONTACT },
-        { label: t('blog'), href: Links.BLOG },
-    ];
 
     const fadeDown = {
         hidden: { opacity: 0, y: -20 },
@@ -43,10 +35,10 @@ function Header() {
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-8 text-gray-800 font-medium">
-                    {links.map((link) => (
-                        <Link key={link.label} href={link.href} className="hover:text-purple-600 transition">
-                            {link.label}
-                        </Link>
+                    {siteSettings.header_links?.map((link) => (
+                        <ClientLink key={link.id} href={link} className="hover:text-purple-600 transition">
+                            {link.link_text}
+                        </ClientLink>
                     ))}
                 </nav>
 
@@ -68,15 +60,15 @@ function Header() {
                         exit="exit"
                         variants={mobileMenuAnim}
                     >
-                        {links.map((link) => (
-                            <Link
-                                key={link.label}
-                                href={link.href}
+                        {siteSettings.header_links?.map((link) => (
+                            <ClientLink
+                                key={link.id}
+                                href={link}
                                 onClick={() => setIsOpen(false)}
                                 className="text-gray-700 hover:text-purple-600 transition"
                             >
-                                {link.label}
-                            </Link>
+                                {link.link_text}
+                            </ClientLink>
                         ))}
                     </motion.nav>
                 )}

@@ -26,7 +26,7 @@ export default function Counts({
                 className
             )}
         >
-            {/* الخلفية */}
+            {/* background */}
             <ClientImage
                 src={background_image}
                 alt={background_image.alternativeText || ''}
@@ -34,7 +34,7 @@ export default function Counts({
             />
             <div className="absolute inset-0 bg-black/60 z-0" />
 
-            {/* المحتوى */}
+            {/* content */}
             <div
                 className={cn(
                     'container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 text-center text-gray-200 place-items-center w-full z-10 relative',

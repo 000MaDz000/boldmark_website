@@ -1,5 +1,6 @@
 import { ContactData } from "./cms_components/types/contact_data";
 import { FooterLink } from "./cms_components/types/footer_link";
+import { Link } from "./cms_components/types/link";
 import { Identity } from "./identity";
 import { Locale } from "./schema";
 
@@ -13,5 +14,6 @@ export interface SiteSettings {
 
     site_identity: { id: number, identity: Identity };
     contact?: ContactData;
-    footer_links: FooterLink[];
+    footer_links?: FooterLink[] | null;
+    header_links?: Link[] | null;
 }

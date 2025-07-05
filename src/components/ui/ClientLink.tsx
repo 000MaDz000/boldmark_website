@@ -26,6 +26,10 @@ function ClientLink({ href, ...rest }: { href: ILink } & LinkProps & HTMLAttribu
             case NativeLinkEnumeration.reviews:
                 proccessedLink = Links.REVIEWS;
                 break;
+            case NativeLinkEnumeration.home:
+                proccessedLink = Links.HOME;
+                break;
+
         }
     }
 

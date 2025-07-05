@@ -8,6 +8,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
         params: {
             populate: {
                 contact: true,
+                header_links: true,
                 site_identity: {
                     populate: {
                         identity: {

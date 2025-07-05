@@ -1,14 +1,12 @@
 import React from 'react'
 // import Logo from '../ui/Logo'
 import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa6'
-import { getSiteSettings } from '@/fetchers/getSiteSettings'
 import ClientImage from '../ui/ClientImage';
 import ClientLink from '../ui/ClientLink';
 import Link from 'next/link';
+import { SiteSettings } from '@/types/site_settings';
 
-async function Footer() {
-    const data = await getSiteSettings();
-    console.log(data);
+function Footer({ siteSettings: data }: { siteSettings: SiteSettings }) {
 
     return (
         <footer className="bg-white border-t text-gray-800">
@@ -25,7 +23,7 @@ async function Footer() {
                     {/* Navigation Links */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
                         {
-                            data.footer_links.map(link => (
+                            data.footer_links?.map(link => (
                                 <div key={link.id}>
                                     <h4 className="text-sm font-semibold mb-4">{link.title}</h4>
                                     <ul className="space-y-2 text-sm text-gray-600">

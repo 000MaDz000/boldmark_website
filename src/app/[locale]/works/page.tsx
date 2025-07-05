@@ -1,4 +1,3 @@
-import Header from '@/components/sections/Header'
 import WorksSection from '@/components/sections/WorksSection'
 import Pagination from '@/components/ui/Pagination';
 import { getProjects } from '@/fetchers/getProjects'
@@ -12,7 +11,6 @@ async function WorksPage({ searchParams: searchParamsPromise }: { searchParams: 
 
     return (
         <div className='flex flex-col gap-14 my-32 grow'>
-            <Header />
             <WorksSection projects={projects.data} pagedata={pagedata} />
             <Pagination meta={projects.meta.pagination} />
         </div>

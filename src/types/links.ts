@@ -3,5 +3,6 @@ export enum Links {
     BLOG = "/blog",
     PRICING = "/pricing",
     REVIEWS = "/#reviews",
-    PROJECTS = "/works"
+    PROJECTS = "/works",
+    HOME = "/"
 }

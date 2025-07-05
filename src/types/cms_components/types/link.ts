@@ -4,6 +4,7 @@ export enum NativeLinkEnumeration {
     projects = "projects",
     blog = "blog",
     pricing = "pricing",
+    home = "home"
 }
 
 export interface Link {
