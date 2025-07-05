@@ -1,5 +1,5 @@
 export enum Links {
-    CONTACT = "/#contact",
+    CONTACT = "/contact",
     BLOG = "/blog",
     PRICING = "/pricing",
     REVIEWS = "/#reviews",

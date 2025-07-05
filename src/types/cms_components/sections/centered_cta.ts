@@ -6,5 +6,5 @@ export interface CenteredCta {
     text?: string | null;
     regular_link?: Link | null;
     filled_link?: Link | null;
-    background_image: Picture;
+    background_image?: Picture | null;
 }

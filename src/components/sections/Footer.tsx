@@ -1,10 +1,9 @@
 import React from 'react'
 // import Logo from '../ui/Logo'
-import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa6'
 import ClientImage from '../ui/ClientImage';
 import ClientLink from '../ui/ClientLink';
-import Link from 'next/link';
 import { SiteSettings } from '@/types/site_settings';
+import SocialLinks from '../ui/SocialLinks';
 
 function Footer({ siteSettings: data }: { siteSettings: SiteSettings }) {
 
@@ -44,61 +43,8 @@ function Footer({ siteSettings: data }: { siteSettings: SiteSettings }) {
                     <p className="text-sm text-gray-500">
                         &copy; {new Date().getFullYear()} جميع الحقوق محفوظة.
                     </p>
-                    <div className="flex gap-4 text-gray-500">
-                        {data.contact?.facebook && (
-                            <Link
-                                href={data.contact.facebook}
-                                className="hover:text-[#1877F2]"
-                            >
-                                <FaFacebookF />
-                            </Link>
-                        )}
 
-                        {data.contact?.linkedin && (
-                            <Link
-                                href={data.contact.linkedin}
-                                className="hover:text-[#0A66C2]"
-                            >
-                                <FaLinkedinIn />
-                            </Link>
-                        )}
-
-                        {data.contact?.instagram && (
-                            <Link
-                                href={data.contact.instagram}
-                                className="hover:text-[#E1306C]"
-                            >
-                                <FaInstagram />
-                            </Link>
-                        )}
-
-                        {data.contact?.x && (
-                            <Link
-                                href={data.contact.x}
-                                className="hover:text-[#000000]"
-                            >
-                                <FaXTwitter />
-                            </Link>
-                        )}
-
-                        {data.contact?.whatsapp_number && (
-                            <Link
-                                href={`https://wa.me/${data.contact.whatsapp_number}`}
-                                className="hover:text-[#25D366]"
-                            >
-                                <FaWhatsapp />
-                            </Link>
-                        )}
-
-                        {data.contact?.phone_number && (
-                            <Link
-                                href={`tel:${data.contact.phone_number}`}
-                                className="hover:text-[#3B82F6]"
-                            >
-                                <FaPhone />
-                            </Link>
-                        )}
-                    </div>
+                    <SocialLinks contact={data.contact || { id: NaN }} />
                 </div>
             </div>
         </footer>

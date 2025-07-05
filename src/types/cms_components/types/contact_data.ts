@@ -1,5 +1,5 @@
 export interface ContactData {
-    id: string;
+    id: number;
     instagram?: string | null;
     facebook?: string | null;
     linkedin?: string | null;
@@ -7,4 +7,6 @@ export interface ContactData {
     whatsapp_number?: string | null;
     phone_number?: string | null;
     email?: string | null;
+    address?: string | null;
+    work_time?: string | null;
 }
