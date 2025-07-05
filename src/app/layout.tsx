@@ -19,7 +19,7 @@ export default async function RootLayout({
 
     return (
         <html lang="en">
-            <body className={`${cairo.className} max-w-screen`} dir={t("locale_dir")}>
+            <body className={`${cairo.className} max-w-screen bg-page`} dir={t("locale_dir")}>
                 <NextIntlClientProvider messages={await getMessages()}>
                     <div className="flex flex-col min-h-screen">
                         <Header siteSettings={siteSettings} />

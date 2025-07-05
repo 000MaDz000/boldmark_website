@@ -30,7 +30,7 @@ function ContactForm() {
                 placeholder={t('name')}
                 value={form.name}
                 onChange={handleChange}
-                className="w-full p-3 rounded border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 rounded border border-border text-shadow-heading focus:outline-none focus:ring-2 focus:ring-primary"
                 required
             />
             <input
@@ -39,7 +39,7 @@ function ContactForm() {
                 placeholder={t('your_email')}
                 value={form.email}
                 onChange={handleChange}
-                className="w-full p-3 rounded border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 rounded border border-border text-shadow-heading focus:outline-none focus:ring-2 focus:ring-primary"
                 required
             />
             <input
@@ -48,7 +48,7 @@ function ContactForm() {
                 placeholder={t('your_phone')}
                 value={form.phone}
                 onChange={handleChange}
-                className="w-full p-3 rounded border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 rounded border border-border text-shadow-heading focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <textarea
                 name="message"
@@ -56,7 +56,7 @@ function ContactForm() {
                 rows={4}
                 value={form.message}
                 onChange={handleChange}
-                className="w-full p-3 rounded border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 rounded border border-border text-shadow-heading focus:outline-none focus:ring-2 focus:ring-primary"
                 required
             ></textarea>
             <button
