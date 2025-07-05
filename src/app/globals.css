@@ -2,6 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
+    --color-page: #FFFFFF;
     /* === Primary Theme Colors === */
     --color-primary: #075985;
     /* sky-800 */
