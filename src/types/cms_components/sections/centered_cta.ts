@@ -3,7 +3,7 @@ import { Link } from "../types/link";
 
 export interface CenteredCta {
     title?: string | null;
-    text: string;
+    text?: string | null;
     regular_link?: Link | null;
     filled_link?: Link | null;
     background_image: Picture;

@@ -7,6 +7,7 @@ export enum NativeLinkEnumeration {
 }
 
 export interface Link {
+    id: number;
     native_link?: NativeLinkEnumeration | null;
     custom_link?: string | null;
     link_text: string;

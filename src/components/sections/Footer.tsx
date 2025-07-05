@@ -1,46 +1,43 @@
 import React from 'react'
-import Logo from '../ui/Logo'
-import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa6'
+// import Logo from '../ui/Logo'
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa6'
+import { getSiteSettings } from '@/fetchers/getSiteSettings'
+import ClientImage from '../ui/ClientImage';
+import ClientLink from '../ui/ClientLink';
+import Link from 'next/link';
 
-function Footer() {
+async function Footer() {
+    const data = await getSiteSettings();
+    console.log(data);
+
     return (
         <footer className="bg-white border-t text-gray-800">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
                     {/* Logo and Description */}
                     <div className="md:max-w-sm">
-                        <Logo />
+                        <ClientImage src={data.site_identity.identity.logo} alt={data.site_identity.identity.logo.alternativeText || data.site_identity.identity.name} className='max-w-20' />
                         <p className="mt-4 text-gray-500">
-                            نبني تجارب رقمية مميزة تساعدك على النمو وتحقيق أهدافك.
+                            {data.site_identity.identity.description}
                         </p>
                     </div>
 
                     {/* Navigation Links */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-                        <div>
-                            <h4 className="text-sm font-semibold mb-4">الخدمات</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
-                                <li><a href="#">تصميم المواقع</a></li>
-                                <li><a href="#">تطوير التطبيقات</a></li>
-                                <li><a href="#">الهوية البصرية</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-sm font-semibold mb-4">الشركة</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
-                                <li><a href="#">من نحن</a></li>
-                                <li><a href="#">فريق العمل</a></li>
-                                <li><a href="#">الأسئلة الشائعة</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-sm font-semibold mb-4">الدعم</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
-                                <li><a href="#">تواصل معنا</a></li>
-                                <li><a href="#">سياسة الخصوصية</a></li>
-                                <li><a href="#">الشروط والأحكام</a></li>
-                            </ul>
-                        </div>
+                        {
+                            data.footer_links.map(link => (
+                                <div key={link.id}>
+                                    <h4 className="text-sm font-semibold mb-4">{link.title}</h4>
+                                    <ul className="space-y-2 text-sm text-gray-600">
+                                        {
+                                            link.links.map(item => (
+                                                <li key={item.id}><ClientLink href={item}>{item.link_text}</ClientLink></li>
+                                            ))
+                                        }
+                                    </ul>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
 
@@ -50,10 +47,59 @@ function Footer() {
                         &copy; {new Date().getFullYear()} جميع الحقوق محفوظة.
                     </p>
                     <div className="flex gap-4 text-gray-500">
-                        <a href="#" className="hover:text-gray-800"><FaFacebookF /></a>
-                        <a href="#" className="hover:text-gray-800"><FaXTwitter /></a>
-                        <a href="#" className="hover:text-gray-800"><FaInstagram /></a>
-                        <a href="#" className="hover:text-gray-800"><FaLinkedinIn /></a>
+                        {data.contact?.facebook && (
+                            <Link
+                                href={data.contact.facebook}
+                                className="hover:text-[#1877F2]"
+                            >
+                                <FaFacebookF />
+                            </Link>
+                        )}
+
+                        {data.contact?.linkedin && (
+                            <Link
+                                href={data.contact.linkedin}
+                                className="hover:text-[#0A66C2]"
+                            >
+                                <FaLinkedinIn />
+                            </Link>
+                        )}
+
+                        {data.contact?.instagram && (
+                            <Link
+                                href={data.contact.instagram}
+                                className="hover:text-[#E1306C]"
+                            >
+                                <FaInstagram />
+                            </Link>
+                        )}
+
+                        {data.contact?.x && (
+                            <Link
+                                href={data.contact.x}
+                                className="hover:text-[#000000]"
+                            >
+                                <FaXTwitter />
+                            </Link>
+                        )}
+
+                        {data.contact?.whatsapp_number && (
+                            <Link
+                                href={`https://wa.me/${data.contact.whatsapp_number}`}
+                                className="hover:text-[#25D366]"
+                            >
+                                <FaWhatsapp />
+                            </Link>
+                        )}
+
+                        {data.contact?.phone_number && (
+                            <Link
+                                href={`tel:${data.contact.phone_number}`}
+                                className="hover:text-[#3B82F6]"
+                            >
+                                <FaPhone />
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>
