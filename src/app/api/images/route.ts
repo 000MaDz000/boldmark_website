@@ -1,6 +1,6 @@
 // app/api/images-proxy/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { readOnlyBackend } from "@/utils/backend";
+import axios from "axios";
 
 export async function GET(req: NextRequest) {
     const imageUrl = req.nextUrl.searchParams.get("path");
@@ -10,10 +10,11 @@ export async function GET(req: NextRequest) {
     }
 
     try {
-        const response = await readOnlyBackend.get(imageUrl, {
+        const response = await axios.get(imageUrl, {
             responseType: "arraybuffer",
             "baseURL": process.env.STRAPI_HOST,
         });
+
 
         const contentType = response.headers["content-type"] || "image/jpeg";
 

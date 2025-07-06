@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
 
 if (process.env.NODE_ENV === "development") {
     nextConfig.images?.remotePatterns?.push(
-        new URL(`${process.env.BACKEND_HOST}/uploads/**`)
+        new URL(`${process.env.STRAPI_HOST}/uploads/**`)
     );
 }
 export default withNextIntl(nextConfig);
