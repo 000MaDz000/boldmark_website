@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import { cn } from '@/utils/cn';
 import ClientImage from '@/components/ui/ClientImage';
 import { CredibilityIndecators } from '@/types/cms_components/sections/credibility_indicators';
+import { getImgURL } from '@/helpers/getImgURL';
 
 interface CountsProps {
     data: CredibilityIndecators;
@@ -18,6 +19,7 @@ export default function Counts({
     contentClassName,
 }: CountsProps) {
     const { background_image, indicators } = data;
+    const bgURL = getImgURL(background_image);
 
     return (
         <div
@@ -25,13 +27,12 @@ export default function Counts({
                 'relative min-h-[20rem] lg:h-[32rem] py-12 px-4 flex items-center justify-center overflow-hidden',
                 className
             )}
+            style={{
+                backgroundImage: `url("${bgURL}")`,
+                backgroundSize: "cover"
+            }}
         >
-            {/* background image */}
-            <ClientImage
-                src={background_image}
-                alt={background_image.alternativeText || ''}
-                className="absolute inset-0 object-cover z-0"
-            />
+            {/* background image overlay */}
             <div className="absolute inset-0 bg-overlay z-0" />
 
             {/* content */}
