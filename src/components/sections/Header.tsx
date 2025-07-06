@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { SiteSettings } from '@/types/site_settings';
 import ClientLink from '../ui/ClientLink';
+import ThemeSwitcher from '../ui/ThemeSwitcher';
 
 function Header({ siteSettings }: { siteSettings: SiteSettings }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,12 @@ function Header({ siteSettings }: { siteSettings: SiteSettings }) {
             variants={fadeDown}
         >
             <div className="flex justify-between items-center max-w-7xl mx-auto">
-                <Logo />
+                <div className='flex gap-3 items-center'>
+                    <Logo siteSettings={siteSettings} />
+                    <div className='flex items-center' dir="ltr">
+                        <ThemeSwitcher variant="icon" className='cursor-pointer' />
+                    </div>
+                </div>
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-8 text-heading font-medium">

@@ -25,21 +25,23 @@ const FeaturesSection = ({ section }: Props) => {
 
                 {section.variant === "default" ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                        {section.features.map((featureObj) => (
+                        {section.features.map((featureObj, index) => (
                             <FeatureCard
                                 key={featureObj.id}
                                 feature={featureObj.data}
                                 variant={section.variant}
+                                index={index}
                             />
                         ))}
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 container mx-auto">
-                        {section.features.map((featureObj) => (
+                        {section.features.map((featureObj, index) => (
                             <FeatureCard
                                 key={featureObj.id}
                                 feature={featureObj.data}
                                 variant={section.variant}
+                                index={index}
                             />
                         ))}
                     </div>

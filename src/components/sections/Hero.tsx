@@ -41,15 +41,15 @@ function Hero({ heroSectionData }: { heroSectionData: HeroSection }) {
                     variants={fadeDown}
                     className="text-center text-on-surface w-full"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold text-on-primary">{heroSectionData.title}</h2>
-                    <h3 className="text-lg md:text-2xl mt-4 text-on-primary/80">{heroSectionData.subtitle}</h3>
+                    <h2 className="text-3xl md:text-5xl font-bold text-on-surface">{heroSectionData.title}</h2>
+                    <h3 className="text-lg md:text-2xl mt-4 text-on-surface-muted">{heroSectionData.subtitle}</h3>
                 </motion.div>
 
                 <div className="flex gap-3">
                     {heroSectionData.filled_link && (
                         <ClientLink
                             href={heroSectionData.filled_link}
-                            className="bg-primary hover:bg-primary-hover transition-colors mt-7 px-6 py-3 text-on-primary rounded-md text-sm font-semibold"
+                            className="bg-primary hover:bg-primary-hover transition-colors mt-7 px-6 py-3 text-on-surface rounded-md text-sm font-semibold"
                         >
                             {heroSectionData.filled_link.link_text}
                         </ClientLink>
@@ -58,7 +58,7 @@ function Hero({ heroSectionData }: { heroSectionData: HeroSection }) {
                     {heroSectionData.regular_link && (
                         <ClientLink
                             href={heroSectionData.regular_link}
-                            className="border-2 border-primary hover:bg-primary-hover transition-colors mt-7 px-6 py-3 text-on-primary rounded-md text-sm font-semibold"
+                            className="border-2 border-primary hover:bg-primary-hover transition-colors mt-7 px-6 py-3 text-on-surface rounded-md text-sm font-semibold"
                         >
                             {heroSectionData.regular_link.link_text}
                         </ClientLink>
