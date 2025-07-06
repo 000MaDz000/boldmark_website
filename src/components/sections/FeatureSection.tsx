@@ -34,8 +34,19 @@ const FeaturesSection = ({ section }: Props) => {
                             />
                         ))}
                     </div>
-                ) : (
+                ) : section.variant === "card" ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 container mx-auto">
+                        {section.features.map((featureObj, index) => (
+                            <FeatureCard
+                                key={featureObj.id}
+                                feature={featureObj.data}
+                                variant={section.variant}
+                                index={index}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 container mx-auto mt-32 gap-32">
                         {section.features.map((featureObj, index) => (
                             <FeatureCard
                                 key={featureObj.id}

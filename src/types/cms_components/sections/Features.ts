@@ -5,6 +5,6 @@ export interface FeaturesSection {
     title: string;
     subtitle?: string | null;
     text?: string | null;
-    variant: "card" | "default";
+    variant: "card" | "default" | "icon-card";
     features: FeatureType[];
 }

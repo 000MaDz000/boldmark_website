@@ -7,8 +7,8 @@ import { motion } from 'framer-motion';
 
 type Props = {
     feature: Feature
-    variant?: "default" | "card"
-    index: number // ← أضف هذا لتحديد الترتيب
+    variant?: "default" | "card" | "icon-card"
+    index: number
 }
 
 const slideVariants = {
@@ -46,7 +46,7 @@ const FeatureCard = ({ feature, variant = "default", index }: Props) => {
             animate="visible"
             exit="exit"
             className={cn(
-                "rounded-2xl flex flex-col items-center gap-4 text-center transition-all duration-300",
+                "rounded-2xl flex flex-col items-center gap-4 text-center transition-all duration-300 relative",
                 variant === "default" && "p-6",
                 variant === "card" && [
                     "bg-white border border-gray-100 shadow-lg hover:shadow-xl",
@@ -59,25 +59,32 @@ const FeatureCard = ({ feature, variant = "default", index }: Props) => {
             {hasImage && (
                 <div
                     className={cn(
-                        "relative overflow-hidden",
-                        variant === "default" && ["w-20 h-20 rounded-full shadow-secondary-muted shadow"],
+                        "relative",
+                        variant === "default" && "w-20 h-20 rounded-full overflow-hidden shadow-secondary-muted shadow",
                         variant === "card" && [
-                            "w-full h-52 bg-gradient-to-br from-gray-50 to-gray-100",
+                            "w-full h-52 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden",
                             "group-hover:from-gray-100 group-hover:to-gray-200 transition-all duration-300",
                         ],
+                        variant === "icon-card" && [
+                            "w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-white",
+                            "-mt-12 mb-2 z-10",
+                            "absolute left-1/2 -translate-x-1/2 -translate-y-3/4",
+                        ]
                     )}
                 >
                     <ClientImage
                         src={feature.image as Picture}
                         alt={(feature.image as Picture).alternativeText || feature.title}
                         className={cn(
-                            "object-cover transition-transform duration-300",
+                            "object-cover",
                             variant === "default" && "w-full h-full",
-                            variant === "card" && "w-full h-52 group-hover:scale-105",
+                            variant === "card" && "w-full h-52 group-hover:scale-105 transition-transform duration-300",
+                            variant === "icon-card" && "w-full h-full"
                         )}
                     />
                 </div>
             )}
+
 
             <div className={cn(variant === "card" && "p-6 pt-4 flex flex-col gap-3 flex-1")}>
                 <h3
