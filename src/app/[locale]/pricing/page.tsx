@@ -10,7 +10,7 @@ export default async function PricingPage() {
     const t = await getTranslations();
 
     return (
-        <div className="grow bg-surface-soft mt-20">
+        <div className="grow bg-surface-soft">
             <div className="container mx-auto px-4 py-12">
                 <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {pageData.plans.map((tier) => (

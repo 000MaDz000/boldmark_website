@@ -12,7 +12,7 @@ async function page() {
     if (!siteSettings) notFound();
 
     return (
-        <div className="grow my-20 space-y-10 px-4 sm:px-6 lg:px-8">
+        <div className="grow space-y-10 px-4 sm:px-6 lg:px-8">
 
             {contactPage?.start_cta ? (
                 <CenteredCTA data={contactPage.start_cta} />

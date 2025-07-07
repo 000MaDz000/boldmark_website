@@ -28,7 +28,7 @@ export default async function Home() {
     const data = await getHomePageData();
 
     return (
-        <div className="my-14 space-y-16 grow">
+        <div className="space-y-16 grow">
             {
                 data.content.map(item => {
                     switch (item.__component) {

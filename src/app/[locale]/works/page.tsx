@@ -10,7 +10,7 @@ async function WorksPage({ searchParams: searchParamsPromise }: { searchParams: 
     const pagedata = await getWorksPageData();
 
     return (
-        <div className='flex flex-col gap-14 my-32 grow'>
+        <div className='flex flex-col gap-14 grow'>
             <WorksSection projects={projects.data} pagedata={pagedata} />
             <Pagination meta={projects.meta.pagination} />
         </div>

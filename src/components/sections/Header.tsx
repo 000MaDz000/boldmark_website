@@ -24,7 +24,7 @@ function Header({ siteSettings }: { siteSettings: SiteSettings }) {
 
     return (
         <motion.header
-            className="w-full px-6 md:px-16 py-4 shadow-sm bg-surface-light fixed top-0 z-50"
+            className="w-full px-6 md:px-16 py-4 shadow-sm bg-surface-light sticky top-0 z-50"
             initial="hidden"
             animate="show"
             variants={fadeDown}

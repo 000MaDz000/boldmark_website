@@ -14,7 +14,7 @@ export default async function BlogPage({
     const pagedata = await getBlogPageData().catch(() => null);
 
     return (
-        <section className="my-12 mx-auto px-4 max-w-screen-xl md:px-8">
+        <section className="mx-auto px-4 max-w-screen-xl md:px-8">
             <div className="text-center mt-7">
                 <h1 className="text-3xl font-semibold text-heading">
                     {pagedata?.title}
