@@ -28,7 +28,7 @@ function Footer({ siteSettings: data }: { siteSettings: SiteSettings }) {
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
                         {data.footer_links?.map((link) => (
                             <div key={link.id}>
-                                <h4 className="text-sm font-semibold mb-4 text-on-surface">
+                                <h4 className="text-sm font-semibold mb-4 text-heading">
                                     {link.title}
                                 </h4>
                                 <ul className="space-y-2 text-sm text-text-subtle">
