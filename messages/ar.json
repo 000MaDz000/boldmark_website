@@ -52,7 +52,17 @@
         "your_phone": "رقم الهاتف",
         "message": "الرسالة",
         "send": "إرسال",
-        "whatsapp": "واتساب"
+        "whatsapp": "واتساب",
+        "sending": "جار الارسال...",
+        "success": "لقد تم استقبال الرسالة بنجاح.",
+        "errors": {
+            "invalid_name": "الاسم غير صالح",
+            "invalid_email": "البريد الإلكتروني غير صالح",
+            "invalid_message": "الرسالة قصيرة جدًا",
+            "submission_failed": "فشل في إرسال الرسالة",
+            "server_error": "حدث خطأ غير متوقع",
+            "unknown": "حدث خطأ غير معروف"
+        }
     },
     "works": {
         "title": "أعمالنا السابقة"
