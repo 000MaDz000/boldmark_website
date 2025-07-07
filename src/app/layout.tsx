@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { getSiteSettings } from "@/fetchers/getSiteSettings";
+import ChatbotWidget from "@/components/ui/ChatbotWidget";
+import { fetchAiChatbotOptions } from "@/fetchers/getAiChatbotOptions";
 
 
 
@@ -14,6 +16,7 @@ export default async function RootLayout({
 }>) {
     const t = await getTranslations();
     const siteSettings = await getSiteSettings();
+    const chatbotOptions = await fetchAiChatbotOptions();
 
     return (
         <html lang="en">
@@ -26,6 +29,7 @@ export default async function RootLayout({
                         </div>
                         <Footer siteSettings={siteSettings} />
                     </div>
+                    <ChatbotWidget options={chatbotOptions} />
                 </NextIntlClientProvider>
             </body>
         </html>

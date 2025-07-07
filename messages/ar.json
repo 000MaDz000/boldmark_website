@@ -8,6 +8,14 @@
     "not configured": "غير معرف",
     "Deliverables": "المخرجات",
     "Features Included": "المميزات",
+    "chatbot": {
+        "title": "التواصل مع الذكاء الاصطناعي",
+        "welcome": "مرحبًا! كيف يمكنني مساعدتك اليوم؟",
+        "error": "عذرًا، حدث خطأ. يرجى المحاولة مرة أخرى.",
+        "suggested_questions": "أسئلة مقترحة:",
+        "placeholder": "اكتب رسالتك...",
+        "open": "افتح المحادثة"
+    },
     "Pagination": {
         "prev": "السابق",
         "next": "التالي"
